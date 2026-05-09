@@ -33,3 +33,18 @@ data/conf/sogo/
 └── themes/
     ├── dark-classic-theme.js
     └── dark-full-theme.js
+```
+## Installation
+
+Mount the custom theme loader and theme directory into the SOGo container.
+
+Example Mailcow compose volume entries:
+```txt
+volumes:
+  - ./data/conf/sogo/custom-theme.js:/usr/local/lib/GNUstep/SOGo/WebServerResources/js/theme.js
+  - ./data/conf/sogo/themes:/usr/local/lib/GNUstep/SOGo/WebServerResources/js/themes
+```
+After placing the files, restart the SOGo container:
+```bash
+docker compose restart sogo-mailcow
+```
